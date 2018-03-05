@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectEqualityDemo", "ObjectEqualityDemo\ObjectEqualityDemo.csproj", "{DAE643AE-057C-4C0E-939B-24206302ED87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectEqualityDemo.Tests", "ObjectEqualityDemo.Tests\ObjectEqualityDemo.Tests.csproj", "{E9151D48-09DA-4C7D-9A6E-D2A955A5071B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DAE643AE-057C-4C0E-939B-24206302ED87}.Debug|x86.ActiveCfg = Debug|x86
+		{DAE643AE-057C-4C0E-939B-24206302ED87}.Debug|x86.Build.0 = Debug|x86
+		{DAE643AE-057C-4C0E-939B-24206302ED87}.Release|x86.ActiveCfg = Release|x86
+		{DAE643AE-057C-4C0E-939B-24206302ED87}.Release|x86.Build.0 = Release|x86
+		{E9151D48-09DA-4C7D-9A6E-D2A955A5071B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E9151D48-09DA-4C7D-9A6E-D2A955A5071B}.Debug|x86.Build.0 = Debug|Any CPU
+		{E9151D48-09DA-4C7D-9A6E-D2A955A5071B}.Release|x86.ActiveCfg = Release|Any CPU
+		{E9151D48-09DA-4C7D-9A6E-D2A955A5071B}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
