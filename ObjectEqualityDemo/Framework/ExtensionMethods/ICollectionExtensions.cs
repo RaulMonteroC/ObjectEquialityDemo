@@ -8,18 +8,18 @@ namespace ObjectEqualityDemo.Framework.ExtensionMethods
         /// <summary>
         /// Check if supplied collection is equivalent to the current one
         /// </summary>
-        /// <returns><c>true</c>, contains the same items in the same order, <c>false</c> otherwise.</returns>
+        /// <returns><c>true</c>, if contains the same items in the same order, <c>false</c> otherwise.</returns>
         /// <param name="currentCollection">Current Collection Instance</param>
         /// <param name="collectionToTest">Collection to be tested against the current instance</param>
-        /// <typeparam name="T">The 1st type parameter.</typeparam>
+        /// <typeparam name="T">The collection's item type</typeparam>
         public static bool IsEqual<T>(this ICollection<T> currentCollection, ICollection<T> collectionToTest)
         {
             if ((currentCollection != null) && (collectionToTest != null))
             {
-                // both object have Wavelengths arrays
+                // both object have number of elements
                 if (currentCollection.Count != collectionToTest.Count) return false;
 
-                // same number of wavelengths, check the values now.
+                // If same number of elements, compare their value
                 foreach (var item in collectionToTest)
                 {
                     if (!currentCollection.Contains(item)) return false; ;
@@ -32,6 +32,18 @@ namespace ObjectEqualityDemo.Framework.ExtensionMethods
             }
 
             return true;
+        }
+
+        public static ICollection<T> Clone<T>(this ICollection<T> currentCollection) where T : IClonable<T>
+        {
+            var clonedCollection = new List<T>();
+
+            foreach (var item in currentCollection)
+            {
+                clonedCollection.Add(item.Clone());
+            }
+
+            return clonedCollection;
         }
     }
 }

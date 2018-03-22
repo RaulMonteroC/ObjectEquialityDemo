@@ -10,8 +10,7 @@ namespace ObjectEqualityDemo.Domain
         public string Name { get; set; }
         public string LastName { get; set; }
         public string PhoneNumber { get; set; }
-        public ICollection<Email> Email { get; set; }
-        public RelationshipType Relationship { get; set; }
+        public ICollection<Email> Emails { get; set; }
 
         public Person Clone()
         {
@@ -20,8 +19,7 @@ namespace ObjectEqualityDemo.Domain
                 Name = this.Name,
                 LastName = this.LastName,
                 PhoneNumber = this.PhoneNumber,
-                Email = new List<Email>(this.Email),
-                Relationship = this.Relationship
+                Emails = Emails.Clone()
             };
 
             return newPerson;
@@ -32,8 +30,7 @@ namespace ObjectEqualityDemo.Domain
             return Name?.GetHashCode() ?? 0 +
                         LastName?.GetHashCode() ?? 0 +
                         PhoneNumber?.GetHashCode() ?? 0 +
-                        Email?.GetHashCode() ?? 0 +
-                        Relationship.GetHashCode();
+                        Emails?.GetHashCode() ?? 0;
         }
 
         public override bool Equals(object obj)
@@ -63,10 +60,10 @@ namespace ObjectEqualityDemo.Domain
 
             // Is any property different between the objects ?
             if (person1.Name != person2.Name) return false;
-            if (person1.LastName != person2.Name) return false;
-            if (person1.Relationship != person2.Relationship) return false;
-            if (!person1.Email.IsEqual(person2.Email)) return false;
-            if (person1.Relationship != person2.Relationship) return false;
+            if (person1.LastName != person2.LastName) return false;
+            if (person1.PhoneNumber != person2.PhoneNumber) return false;
+            if (!person1.Emails.IsEqual(person2.Emails)) return false;
+
 
             return true;
         }

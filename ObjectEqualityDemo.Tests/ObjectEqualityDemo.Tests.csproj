@@ -33,5 +33,15 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PersonTest.cs" />
+    <Compile Include="EmailTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ObjectEqualityDemo\ObjectEqualityDemo.csproj">
+      <Project>{DAE643AE-057C-4C0E-939B-24206302ED87}</Project>
+      <Name>ObjectEqualityDemo</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
